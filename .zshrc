@@ -1,5 +1,7 @@
-# -------- My-zsh ---------
-
+#╔═╗╔═╗╦ ╦
+#╔═╝╚═╗╠═╣
+#╚═╝╚═╝╩ ╩
+cat /Users/amoghrathod/zsh/art/ascii-text-art.txt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -8,7 +10,9 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# ------ Plugins -------
+#╔═╗╦  ╦ ╦╔═╗╦╔╗╔╔═╗
+#╠═╝║  ║ ║║ ╦║║║║╚═╗
+#╩  ╩═╝╚═╝╚═╝╩╝╚╝╚═╝
 plugins=(
 	git
 	zsh-autosuggestions
@@ -21,21 +25,32 @@ plugins=(
   jsontools
 )
 
+# ╔═╗╔═╗
+# ║ ╦║ ║
+# ╚═╝╚═╝
+export PATH="$PATH:$(go env GOPATH)/bin"
+
 source $ZSH/oh-my-zsh.sh
 
-# Fuzzy finder
+# ╔═╗╔═╗╔═╗
+# ╠╣ ╔═╝╠╣ 
+# ╚  ╚═╝╚  
 eval "$(fzf --zsh)"
 
-# The fuck
+# ╔╦╗╦ ╦╔═╗  ╔═╗╦ ╦╔═╗╦╔═
+#  ║ ╠═╣║╣   ╠╣ ║ ║║  ╠╩╗
+#  ╩ ╩ ╩╚═╝  ╚  ╚═╝╚═╝╩ ╩
 eval $(thefuck --alias)
 
-# zoxide 
+# ╔═╗╔═╗═╗ ╦╦╔╦╗╔═╗
+# ╔═╝║ ║╔╩╦╝║ ║║║╣ 
+# ╚═╝╚═╝╩ ╚═╩═╩╝╚═╝
 eval "$(zoxide init zsh)"
 
-# You may need to manually set your language environment
- export LANG=en_GB.UTF-8
-
-# Preferred editor for local and remote sessions
+export LANG=en_GB.UTF-8
+# ╔═╗╔═╗╦ ╦
+# ╚═╗╚═╗╠═╣
+# ╚═╝╚═╝╩ ╩
 if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='nvim'
  else
@@ -43,19 +58,38 @@ export EDITOR=nvim
 export VISUAL="$EDITOR"
 fi
 
-# ------ Aliases -------
+# ╔═╗╦  ╦╔═╗╔═╗╔═╗╔═╗
+# ╠═╣║  ║╠═╣╚═╗║╣ ╚═╗
+# ╩ ╩╩═╝╩╩ ╩╚═╝╚═╝╚═╝
 alias n="nvim"
 alias c="clang -o"
 alias ls="eza --color=always --no-filesize --icons=always --no-user --no-time --no-permissions"
-alias lt="eza --tree --level=2"
+alias lt="eza --color=always --no-filesize --icons=always --no-user --no-time --no-permissions --tree --level=2"
 alias cd="z"
 alias tf="thefuck"
 alias up="brew update && brew upgrade && brew cleanup"
-# Path to brew
+alias ub="cd '~/Library/Application Support/Übersicht'"
+alias a="exit"
+# Git Aliases
+alias add="git add"
+alias commit="git commit"
+alias pull="git pull"
+alias stat="git status"
+alias gdiff="git diff HEAD"
+alias vdiff="git difftool HEAD"
+alias log="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias cfg="git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
+alias push="git push"
+alias g="lazygit"
+
+# ╔╗ ╦═╗╔═╗╦ ╦
+# ╠╩╗╠╦╝║╣ ║║║
+# ╚═╝╩╚═╚═╝╚╩╝
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
+# ╔═╗╔═╗╔╗╔╔╦╗╔═╗
+# ║  ║ ║║║║ ║║╠═╣
+# ╚═╝╚═╝╝╚╝═╩╝╩ ╩
 __conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
@@ -67,7 +101,6 @@ else
     fi
 fi
 unset __conda_setup
-# <<< conda initialize <<<
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
