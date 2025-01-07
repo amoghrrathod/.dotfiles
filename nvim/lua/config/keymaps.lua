@@ -11,4 +11,7 @@ vim.api.nvim_set_keymap("n", "<C-2>", ":bnext<CR>", opts)
 vim.api.nvim_set_keymap("n", "<C-1>", ":bprev<CR>", opts)
 
 -- Nvim split screen
-vim.api.nvim_set_keymap("n", "<C-v>", ":vs", opts)
+vim.api.nvim_set_keymap("n", "<C-v>", ":vs<CR>", opts)
+
+-- Delete Buffer
+vim.api.nvim_set_keymap("n", "<C-b>", ":bd<CR>", opts)

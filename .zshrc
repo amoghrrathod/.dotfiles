@@ -1,7 +1,10 @@
 #╔═╗╔═╗╦ ╦
 #╔═╝╚═╗╠═╣
 #╚═╝╚═╝╩ ╩
+
+# Restart Yabai and Sketchybar at launch
 cat /Users/amoghrathod/zsh/art/ascii-text-art.txt
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
