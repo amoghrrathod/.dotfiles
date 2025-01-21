@@ -1,4 +1,5 @@
 return {
+	["Photo Booth"] = "📸",
 	["Ghostty"] = "👻",
 	["Typora"] = ":text:",
 	["Orion"] = ":orion:",
