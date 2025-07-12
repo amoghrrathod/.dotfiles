@@ -21,7 +21,7 @@ local volume_icon = sbar.add("item", "widgets.volume2", {
 		string = icons.volume._100,
 		width = 0,
 		align = "left",
-		color = colors.grey,
+		color = colors.white,
 		font = {
 			style = settings.font.style_map["Regular"],
 			size = 14.0,
@@ -41,7 +41,7 @@ local volume_bracket = sbar.add("bracket", "widgets.volume.bracket", {
 	volume_icon.name,
 	volume_percent.name,
 }, {
-	background = { color = colors.bg1 },
+	background = { color = colors.transparent },
 	popup = { align = "center" },
 })
 
@@ -57,14 +57,14 @@ local volume_slider = sbar.add("slider", popup_width, {
 		background = {
 			height = 6,
 			corner_radius = 3,
-			color = colors.bg2,
+			color = colors.black,
 		},
 		knob = {
 			string = "􀀁",
 			drawing = true,
 		},
 	},
-	background = { color = colors.bg1, height = 2, y_offset = -20 },
+	background = { color = colors.grey, height = 2, y_offset = -20 },
 	click_script = 'osascript -e "set volume output volume $PERCENTAGE"',
 })
 
@@ -114,13 +114,13 @@ local function volume_toggle_details(env)
 			current_audio_device = result:sub(1, -2)
 			sbar.exec("SwitchAudioSource -a -t output", function(available)
 				local current = current_audio_device
-				local color = colors.grey
+				local color = colors.white
 				local counter = 0
 
 				for device in string.gmatch(available, "[^\r\n]+") do
-					local color = colors.grey
+					local color = colors.white
 					if current == device then
-						color = colors.white
+						color = colors.orange
 					end
 					sbar.add("item", "volume.device." .. counter, {
 						position = "popup." .. volume_bracket.name,

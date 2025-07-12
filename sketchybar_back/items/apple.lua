@@ -30,7 +30,7 @@ sbar.add("bracket", { apple.name }, {
 		height = 30,
 		-- Removed border properties
 		border_width = 1,
-		border_color = colors.grey,
+		border_color = colors.transparent,
 	},
 })
 

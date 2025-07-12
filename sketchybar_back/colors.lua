@@ -1,22 +1,22 @@
 return {
-	black = 0xff1c1c1e, -- Slightly darker black for a cleaner, muted look
-	white = 0xffd9d9da, -- Softer white to reduce contrast
-	red = 0xfffc4b6a, -- Subtle red for a more muted accent
-	green = 0xff88c057, -- Softer green to reduce vibrancy
-	blue = 0xff5fbce9, -- Cooler blue that feels modern
-	yellow = 0xffe6b854, -- Subdued yellow for a calmer feel
-	orange = 0xfff2874b, -- Less intense orange for a smoother look
-	magenta = 0xffa58beb, -- Subtle magenta, more neutral
-	grey = 0xff6b6e75, -- Slightly darker grey for better contrast
+	black = 0xff0f0f0f, -- Deep black for strong contrast
+	white = 0xfff5f5f5, -- Crisp white to stand out against bright backgrounds
+	red = 0xffe63946, -- Vibrant red for clear accents
+	green = 0xff2a9d8f, -- Bold green for visibility
+	blue = 0xff0077b6, -- Strong blue to remain distinct
+	yellow = 0xfff4a261, -- Bright yellow for emphasis
+	orange = 0xffe76f51, -- Vivid orange for clear highlights
+	magenta = 0xff9b5de5, -- Bright magenta for energetic contrast
+	grey = 0xff495057, -- Darker grey for better readability
 	transparent = 0x00000000, -- Fully transparent
 
 	bar = {
 		bg = 0x00000000, -- Fully transparent background
-		border = 0xff222225, -- Dark border for contrast
+		border = 0xff343a40, -- Dark border for distinct separation
 	},
 	popup = {
 		bg = 0x00000000, -- Fully transparent popup background
-		border = 0xff6b6e75, -- Grey border for soft edges
+		border = 0xff495057, -- Dark grey border for clear delineation
 	},
 	bg1 = 0x00000000, -- Fully transparent base background layer
 	bg2 = 0x00000000, -- Fully transparent lighter layer for depth

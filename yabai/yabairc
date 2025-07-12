@@ -3,8 +3,8 @@
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
-yabai -m config external_bar all:40:0 \
-  mouse_follows_focus off \
+yabai -m config external_bar all:1:1 \ # make it 40:0 for sketchhybar
+mouse_follows_focus off \
   focus_follows_mouse off \
   window_zoom_persist off \
   window_placement second_child \
@@ -22,16 +22,15 @@ yabai -m config external_bar all:40:0 \
   mouse_action1 move \
   mouse_action2 resize \
   mouse_drop_action swap \
-  top_padding 1 \
+  top_padding 5 \
   bottom_padding 5 \
   left_padding 5 \
-  right_padding 5 \
-  window_gap 7
+  right_padding 5 window_gap 5
 
 # Exclude problematic apps from being managed:
-yabai -m rule --add app="^(^Finder$|VMware Fusion|^FaceTime$|Screen Sharing|Weather|gtkwave|Messages|LuLu|Calculator|Software Update|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor|Parallels Desktop)$" manage=off
+yabai -m rule --add app="^(^Finder$|Logi Options+|Settings|VMware Fusion|^FaceTime$|Screen Sharing|Transmission|Weather|gtkwave|Messages|LuLu|Calculator|Software Update|Dictionary|VLC|System Preferences|System Settings|zoom.us|Photo Booth|Archive Utility|Python|LibreOffice|App Store|Steam|Alfred|Activity Monitor|Parallels Desktop|Brawlhalla|^TLauncher$)$" manage=off
 yabai -m rule --add label="Finder" app="^Finder$" title="(Co(py|nnect)|Move|Info|Pref)" manage=off
-yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
+# yabai -m rule --add label="Safari" app="^Safari$" title="^(General|(Tab|Password|Website|Extension)s|AutoFill|Se(arch|curity)|Privacy|Advance)$" manage=off
 yabai -m rule --add label="FaceTime" app="^FaceTime$" title="(Incoming|Call|Info|Settings|Screen Sharing)" manage=off
 yabai -m rule --add label="About This Mac" app="System Information" title="About This Mac" manage=off
 yabai -m rule --add label="Select file to save to" app="^Inkscape$" title="Select file to save to" manage=off
@@ -41,10 +40,14 @@ yabai -m signal --add event=window_focused action="sketchybar --trigger window_f
 yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
 yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
 
+#kitty dropdown
+yabai -m rule --add title="KittyDropdown" manage=off layer=above border=off
+
 # ghostty config
-yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
-yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --layout bsp'
+# yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
+# yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --layout bsp'
 
 yabai -m config layout bsp
-
+borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 &
+yabai -m config window_shadow off
 echo "yabai configuration loaded.."

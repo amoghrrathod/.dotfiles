@@ -95,11 +95,11 @@ gui.show_bytes_show: ASCII
 
 # Main window upper (or leftmost) pane size.
 # Decimal number.
-gui.geometry_main_upper_pane: 763
+gui.geometry_main_upper_pane: 403
 
 # Main window middle pane size.
 # Decimal number.
-gui.geometry_main_lower_pane: 1647
+gui.geometry_main_lower_pane: 1657
 
 # Main window master splitter state.
 # Hex byte string.
@@ -111,7 +111,7 @@ gui.geometry_main_extra_split: 000000ff00000001000000020000067f0000001000fffffff
 
 # Splitter state of PacketDialog window.
 # Qt Splitter state (hex byte string).
-gui.geom.PacketDialog.splitter: 000000ff0000000100000002000000c0000000e201ffffffff010000000200
+gui.geom.PacketDialog.splitter: 000000ff0000000100000002000000c0000000e201ffffffff010000000100
 
 # Packet list column pixel widths.
 # Each pair of strings consists of a column format and its pixel width.
@@ -145,7 +145,7 @@ gui.endpoint_tabs_columns:
 gui.rlc_pdus_from_mac_frames: false
 
 # Last directory navigated to in File Open dialog.
-gui.fileopen_remembered_dir: /Users/amoghrathod/
+gui.fileopen_remembered_dir: /Users/amoghrathod/Downloads/
 
 # Additional Toolbars shown
 # List of additional toolbars to show.

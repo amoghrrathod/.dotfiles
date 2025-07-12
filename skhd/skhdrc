@@ -98,3 +98,9 @@ shift + lalt - space : sketchybar --bar hidden=toggle
 ctrl + alt - t : open -a /Applications/kitty.app
 # open firefox
 ctrl + alt - b : open -a /Applications/Firefox.app
+
+alt - m : open -a /Applications/Music.app
+
+#drop down terminal
+ctrl + alt - z : ~/.config/skhd/dropdown-kitty.sh
+

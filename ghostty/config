@@ -6,7 +6,7 @@ font-family-bold-italic = "Victor Mono Bold Italic"
 font-synthetic-style = true
 font-thicken = true
 font-feature = liga
-font-size = 21
+font-size = 18
 
 # Window 
 macos-titlebar-style = "hidden"
@@ -34,5 +34,6 @@ shell-integration-features = no-cursor
 # Key Binds
 keybind = ctrl+shift+t=new_window
 keybind = ctrl+t=new_tab
+confirm-close-surface = false
 # Updates 
 auto-update = "check"

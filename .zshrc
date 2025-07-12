@@ -8,10 +8,10 @@ cat /Users/amoghrathod/zsh/art/ascii-text-art.txt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
+# eval "$(starship init zsh)"
 
 #╔═╗╦  ╦ ╦╔═╗╦╔╗╔╔═╗
 #╠═╝║  ║ ║║ ╦║║║║╚═╗
@@ -32,7 +32,6 @@ plugins=(
 # ║ ╦║ ║
 # ╚═╝╚═╝
 export PATH="$PATH:$(go env GOPATH)/bin"
-
 source $ZSH/oh-my-zsh.sh
 
 # ╔═╗╔═╗╔═╗
@@ -64,15 +63,21 @@ fi
 # ╔═╗╦  ╦╔═╗╔═╗╔═╗╔═╗
 # ╠═╣║  ║╠═╣╚═╗║╣ ╚═╗
 # ╩ ╩╩═╝╩╩ ╩╚═╝╚═╝╚═╝
+
+alias arch="open ~/Virtual\ Machines.localized/arch.vmwarevm"
+alias kali="open ~/Virtual\ Machines.localized/kali.vmwarevm"
 alias n="nvim"
 alias c="clang -o"
-alias ls="eza --color=always --no-filesize --icons=always --no-user --no-time --no-permissions"
+alias ls="eza --all --color=always --no-filesize --icons=always --no-user --no-time --no-permissions"
 alias lt="eza --color=always --no-filesize --icons=always --no-user --no-time --no-permissions --tree --level=2"
 alias cd="z"
 alias tf="thefuck"
 alias up="brew update && brew upgrade && brew cleanup"
 alias ub="cd '~/Library/Application Support/Übersicht'"
 alias a="exit"
+alias ref='brew services restart sketchybar && aerospace reload-config'
+alias stop='brew services stop sketchybar && yabai --stop-service'
+alias start='yabai --start-service && brew services start sketchybar'
 # Git Aliases
 alias add="git add"
 alias commit="git commit"
@@ -98,9 +103,9 @@ if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
     if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/opt/anaconda3/etc/profile.d/conda.sh"
+# . "/opt/anaconda3/etc/profile.d/conda.sh"  # commented out by conda initialize
     else
-        export PATH="/opt/anaconda3/bin:$PATH"
+# export PATH="/opt/anaconda3/bin:$PATH"  # commented out by conda initialize
     fi
 fi
 unset __conda_setup
@@ -110,3 +115,20 @@ unset __conda_setup
 unset ZSH_AUTOSUGGEST_USE_ASYNC
 
 
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+export PATH="/opt/homebrew/opt/icu4c@77/bin:$PATH"

@@ -10,21 +10,25 @@ recent.capture_file: /Users/amoghrathod/hack1-12.cap
 recent.capture_file: /Users/amoghrathod/saideep-01-clean.cap
 recent.capture_file: /Users/amoghrathod/saideep-01_clean.cap
 recent.capture_file: /Users/amoghrathod/saideep-01.cap
+recent.capture_file: /Users/amoghrathod/Downloads/realistic_traffic.pcap
 
 ######## Recent capture filters (latest first), cannot be altered through command line ########
 
 
 ######## Recent display filters (latest last), cannot be altered through command line ########
 
+recent.display_filter: udp.port==12345
+recent.display_filter: udp.port ==12345
+recent.display_filter: udp
 recent.display_filter: http
 recent.display_filter: eapol
 
 # Main window geometry.
 # Decimal numbers.
-gui.geometry_main_x: 5
-gui.geometry_main_y: 41
-gui.geometry_main_width: 1670
-gui.geometry_main_height: 976
+gui.geometry_main_x: 0
+gui.geometry_main_y: 545
+gui.geometry_main_width: 1680
+gui.geometry_main_height: 561
 
 # Main window maximized.
 # true or false (case-insensitive).
@@ -32,7 +36,7 @@ gui.geometry_main_maximized: false
 
 # Main window geometry state.
 # Hex byte string.
-gui.geometry_main: 01d9d0cb0003000000000005000000290000068a0000041400000005000000450000068a000004140000000000000000069000000005000000450000068a00000414
+gui.geometry_main: 01d9d0cb0003000000000000000002210000068f0000046d000000000000023d0000068f0000046d00000000000000000690000000000000023d0000068f0000046d
 
 # Leftalign Action Buttons.
 # true or false (case-insensitive).
@@ -79,14 +83,14 @@ gui.search_type: DISPLAY_FILTER
 
 # Geometry and maximized state of PacketDialog window.
 # Decimal integers.
-gui.geom.PacketDialog.x: 446
-gui.geom.PacketDialog.y: 148
-gui.geom.PacketDialog.width: 768
-gui.geom.PacketDialog.height: 614
+gui.geom.PacketDialog.x: 0
+gui.geom.PacketDialog.y: 0
+gui.geom.PacketDialog.width: 1680
+gui.geom.PacketDialog.height: 1050
 # true or false (case-insensitive).
-gui.geom.PacketDialog.maximized: false
+gui.geom.PacketDialog.maximized: true
 # Qt Geometry State (hex byte string).
-gui.geom.PacketDialog.qt_geometry: 01d9d0cb00030000000001be00000094000004bd00000315000001be000000b0000004bd0000031500000000000000000690000001be000000b0000004bd00000315
+gui.geom.PacketDialog.qt_geometry: 01d9d0cb0003000000000000000000000000068f00000419000001be000000b0000004bd000003150000000000040000069000000000000000000000068f00000419
 
 # Custom colors.
 # List of custom colors selected in Qt color picker.
